@@ -32,6 +32,7 @@ const SelectList: React.FC<SelectListProps> =  ({
         search = true,
         searchPlaceholder = "search",
         notFoundText = "No data found",
+        disabled = false,
         disabledItemStyles,
         disabledTextStyles,
         onSelect = () => {},
@@ -172,7 +173,7 @@ const SelectList: React.FC<SelectListProps> =  ({
                         
                     </View>
                 :
-                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => { if(!dropdown){ Keyboard.dismiss(); slidedown() }else{ slideup() } }}>
+                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => { if(!dropdown){ Keyboard.dismiss(); slidedown() }else{ slideup() } }} disabled={disabled}>
                         <Text style={[{fontFamily},inputStyles]}>{ (selectedval == "") ? (placeholder) ? placeholder : 'Select option' : selectedval  }</Text>
                         {
                             (!arrowicon)

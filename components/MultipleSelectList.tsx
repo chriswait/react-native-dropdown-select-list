@@ -38,6 +38,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
         onClose = () => {},
         label,
         notFoundText = "No data found",
+        disabled = false,
         disabledItemStyles,
         disabledTextStyles,
         disabledCheckBoxStyles,
@@ -171,7 +172,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
                 (selectedval?.length > 0 )
 
                 ?
-                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => { if(!dropdown){ Keyboard.dismiss(); slidedown() }else{ slideup() } }} >
+                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => { if(!dropdown){ Keyboard.dismiss(); slidedown() }else{ slideup() } }} disabled={disabled}>
                         <View>
                             <Text style={[{fontWeight:'600',fontFamily},labelStyles]}>{ label }</Text>
                             <View style={{flexDirection:'row',marginBottom:8,flexWrap:'wrap'}}>
@@ -188,7 +189,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
                         </View>
                     </TouchableOpacity>
                 :
-                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => { if(!dropdown){ Keyboard.dismiss(); slidedown() }else{ slideup() } }}>
+                    <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => { if(!dropdown){ Keyboard.dismiss(); slidedown() }else{ slideup() } }} disabled={disabled}>
                         <Text style={[{fontFamily},inputStyles]}>{ (selectedval == "") ? (placeholder) ? placeholder : 'Select option' : selectedval  }</Text>
                         {
                             (!arrowicon)

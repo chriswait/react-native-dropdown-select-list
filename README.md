@@ -150,6 +150,7 @@ For Live `Demo` [(Expo Snack)](https://snack.expo.dev/@danish1658/react-native-d
 | fontFamily| string | Pass font name to apply globally on each text field of component
 | notFoundText| string | Pass your custom message if any search result returns empty
 | dropdownShown| boolean | Control your dropdown ( on & off ) state by changing its value to true or false
+| disabled| boolean | Disable interaction with the dropdown
 
 <br>
 
