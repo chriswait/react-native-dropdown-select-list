@@ -99,6 +99,11 @@ export interface SelectListProps  {
     notFoundText?: string,
 
     /**
+    * Prevent all interaction with the dropdown
+    */
+    disabled?: boolean,
+
+    /**
     * Additional styles for disabled list item
     */
     disabledItemStyles?: ViewStyle,
@@ -225,6 +230,11 @@ export interface MultipleSelectListProps  {
     * set this to change the default search failure text
     */
     notFoundText?: string,
+
+    /**
+    * Prevent all interaction with the dropdown
+    */
+    disabled?: boolean,
 
     /**
     * Additional styles for disabled list item
